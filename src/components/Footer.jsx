@@ -4,8 +4,9 @@ import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
 const Footer = () => {
   return (
     <>
-      <footer className="bg-[#3e0e0e] text-white py-10 px-4 relative">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 items-center text-center md:text-left">
+      <footer className="relative bg-gradient-to-r from-[#0f2d2a] via-[#270c0c] to-[#0f2d2a] text-white py-12 px-4 overflow-hidden">
+        <div className="snow-overlay" aria-hidden="true" />
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 items-center text-center md:text-left relative">
           {/* Logo o nombre */}
           <div>
             <h3 className="text-2xl font-bold text-[#E3B778]">5 Viñas</h3>

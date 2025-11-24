@@ -1,22 +1,43 @@
 import React from "react";
+import { FaGift, FaSnowflake, FaTree } from "react-icons/fa";
 import hero from "../assets/10.jpg";
 import hero2 from "../assets/11.jpg";
 import hero3 from "../assets/12.png";
 
 const Hero = () => {
   const stats = [
-    { value: "2,500+", label: "Clientes satisfechos" },
+    { value: "2,500+", label: "Brindis inolvidables" },
     { value: "5+", label: "Viñedos asociados" },
     { value: "10+", label: "Variedades de vinos y piscos" },
     { value: "300+", label: "Años de tradición" },
   ];
 
+  const holidayHighlights = [
+    {
+      icon: <FaTree className="text-[#E3B778]" />,
+      text: "Edición especial con notas cálidas para cenas navideñas.",
+    },
+    {
+      icon: <FaGift className="text-[#E3B778]" />,
+      text: "Empaques listos para regalar con tarjetas personalizadas.",
+    },
+    {
+      icon: <FaSnowflake className="text-[#E3B778]" />,
+      text: "Envíos refrigerados para mantener la magia intacta.",
+    },
+  ];
+
   return (
     <section
       id="inicio"
-      className="relative overflow-hidden bg-gradient-to-r from-[#bb5454] to-[#470808]"
+      className="relative overflow-hidden bg-gradient-to-r from-[#0f2d2a] via-[#3c0c0c] to-[#0f2d2a]"
     >
-      <article className="container mx-auto px-4 py-5 md:py-5 flex flex-col md:flex-row items-center">
+      <div className="garland absolute top-0 left-0 right-0" aria-hidden="true" />
+      <div className="snow-overlay" aria-hidden="true" />
+      <div className="twinkle" aria-hidden="true" />
+      <div className="absolute -right-10 -top-24 w-56 h-56 rounded-full bg-[#e3b778]/10 blur-3xl" aria-hidden="true" />
+      <div className="absolute -left-16 top-20 w-64 h-64 rounded-full bg-[#c7222a]/20 blur-3xl" aria-hidden="true" />
+      <article className="container mx-auto px-4 py-8 md:py-10 flex flex-col md:flex-row items-center relative z-10">
         {/* Texto */}
         <div
           className="md:w-1/2 mb-10 md:mb-0"
@@ -24,13 +45,16 @@ const Hero = () => {
           data-aos-duration="1000"
         >
           <hgroup>
+            <span className="inline-flex items-center gap-2 text-[#E3B778] font-semibold bg-white/10 border border-[#E3B778]/30 rounded-full px-4 py-2 mb-4">
+              <FaSnowflake />
+              Navidad en cada brindis
+            </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
-              El sabor de la tradición en{" "}
-              <mark className="text-[#E3B778] bg-transparent">cada copa</mark>
+              Vinos artesanales para <span className="text-[#E3B778]">celebrar en familia</span>
             </h1>
             <p className="text-lg text-gray-200 mb-8 max-w-lg text-justify">
-              Disfruta nuestros vinos y piscos artesanales cuidadosamente
-              elaborados en las mejores tierras del país. Bienvenido a 5 Viñas.
+              De nuestros viñedos a tu mesa: ediciones festivas con notas cálidas,
+              especiadas y afrutadas que realzan tus cenas y reuniones navideñas.
             </p>
           </hgroup>
 
@@ -70,11 +94,28 @@ const Hero = () => {
                 </li>
               ))}
             </ul>
-          </aside>
+            </aside>
+
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4" data-aos="fade-up" data-aos-delay="500">
+            {holidayHighlights.map((item, idx) => (
+              <div
+                key={idx}
+                className="flex items-start gap-3 frosted-card rounded-xl p-4"
+              >
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1f0c0c]/80 border border-[#E3B778]/40">
+                  {item.icon}
+                </span>
+                <p className="text-sm text-gray-200 text-left">{item.text}</p>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Imágenes responsivas */}
-        <div className="md:w-1/2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 place-items-center">
+        <div className="md:w-1/2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 place-items-center relative">
+          <span className="ornament -left-4 top-2" aria-hidden="true" />
+          <span className="ornament right-6 bottom-8" aria-hidden="true" />
+
           {/* Botella 1 */}
           <figure
             className="relative aspect-square w-32 sm:w-36 md:w-40 lg:w-44"
@@ -88,6 +129,9 @@ const Hero = () => {
               className="w-full h-full object-cover rounded-full shadow-2xl"
               loading="eager"
             />
+            <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 bg-[#1f0c0c]/70 text-[#E3B778] text-xs px-3 py-1 rounded-full border border-[#E3B778]/40">
+              Blend de invierno
+            </div>
           </figure>
 
           {/* Botella 2 */}
@@ -103,6 +147,9 @@ const Hero = () => {
               className="w-full h-full object-cover rounded-full shadow-2xl"
               loading="eager"
             />
+            <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 bg-[#1f0c0c]/70 text-[#E3B778] text-xs px-3 py-1 rounded-full border border-[#E3B778]/40">
+              Etiqueta regalo
+            </div>
           </figure>
 
           {/* Botella 3 */}
@@ -118,7 +165,29 @@ const Hero = () => {
               className="w-full h-full object-cover rounded-full shadow-2xl"
               loading="eager"
             />
+            <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 bg-[#1f0c0c]/70 text-[#E3B778] text-xs px-3 py-1 rounded-full border border-[#E3B778]/40">
+              Brillo dorado
+            </div>
           </figure>
+        </div>
+
+        <div className="mt-10 w-full" data-aos="fade-up" data-aos-delay="550">
+          <div className="frosted-card rounded-2xl p-5 flex flex-col md:flex-row items-center gap-4">
+            <div className="flex-1 text-center md:text-left">
+              <p className="uppercase tracking-[0.28em] text-xs text-[#E3B778]/80 mb-2">
+                Navidad 2025
+              </p>
+              <p className="text-white font-semibold text-lg">
+                Entregas en 24h en Lima y empaques personalizados con tu mensaje navideño.
+              </p>
+            </div>
+            <a
+              href="#contact"
+              className="bg-gradient-to-r from-[#e3b778] to-[#c7222a] text-[#3E1F1B] font-semibold px-6 py-3 rounded-full shadow-lg hover:from-[#f3d6a7] hover:to-[#d83335] transition"
+            >
+              Reservar entrega
+            </a>
+          </div>
         </div>
       </article>
     </section>
