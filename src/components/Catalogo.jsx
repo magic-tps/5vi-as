@@ -55,7 +55,9 @@ const CatalogoCarousel = () => {
       id="catalogo"
       className="relative bg-gradient-to-r from-[#132826] via-[#471010] to-[#132826] py-20"
     >
+      <div className="garland absolute top-0 left-0 right-0" aria-hidden="true" />
       <div className="snow-overlay" aria-hidden="true" />
+      <div className="twinkle" aria-hidden="true" />
       <div className="container mx-auto px-4 relative">
         <div className="text-center mb-12" data-aos="fade-up">
           <p className="uppercase tracking-[0.25em] text-xs text-[#E3B778]/80 mb-3">
@@ -73,7 +75,9 @@ const CatalogoCarousel = () => {
         <Slider {...settings}>
           {productos.map((vino, index) => (
             <div key={index} className="px-4">
-              <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden card-glow">
+              <div className="frosted-card rounded-2xl overflow-hidden relative">
+                <span className="ornament right-5 top-4" aria-hidden="true" />
+                <span className="ornament left-4 -bottom-3" aria-hidden="true" />
                 <img
                   src={vino.imagen}
                   alt={`Botella de ${vino.nombre}`}

@@ -32,10 +32,12 @@ const Hero = () => {
       id="inicio"
       className="relative overflow-hidden bg-gradient-to-r from-[#0f2d2a] via-[#3c0c0c] to-[#0f2d2a]"
     >
+      <div className="garland absolute top-0 left-0 right-0" aria-hidden="true" />
       <div className="snow-overlay" aria-hidden="true" />
+      <div className="twinkle" aria-hidden="true" />
       <div className="absolute -right-10 -top-24 w-56 h-56 rounded-full bg-[#e3b778]/10 blur-3xl" aria-hidden="true" />
       <div className="absolute -left-16 top-20 w-64 h-64 rounded-full bg-[#c7222a]/20 blur-3xl" aria-hidden="true" />
-      <article className="container mx-auto px-4 py-5 md:py-5 flex flex-col md:flex-row items-center">
+      <article className="container mx-auto px-4 py-8 md:py-10 flex flex-col md:flex-row items-center relative z-10">
         {/* Texto */}
         <div
           className="md:w-1/2 mb-10 md:mb-0"
@@ -92,13 +94,13 @@ const Hero = () => {
                 </li>
               ))}
             </ul>
-          </aside>
+            </aside>
 
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4" data-aos="fade-up" data-aos-delay="500">
             {holidayHighlights.map((item, idx) => (
               <div
                 key={idx}
-                className="flex items-start gap-3 bg-white/5 border border-white/10 rounded-xl p-4 backdrop-blur-sm"
+                className="flex items-start gap-3 frosted-card rounded-xl p-4"
               >
                 <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1f0c0c]/80 border border-[#E3B778]/40">
                   {item.icon}
@@ -110,7 +112,10 @@ const Hero = () => {
         </div>
 
         {/* Imágenes responsivas */}
-        <div className="md:w-1/2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 place-items-center">
+        <div className="md:w-1/2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 place-items-center relative">
+          <span className="ornament -left-4 top-2" aria-hidden="true" />
+          <span className="ornament right-6 bottom-8" aria-hidden="true" />
+
           {/* Botella 1 */}
           <figure
             className="relative aspect-square w-32 sm:w-36 md:w-40 lg:w-44"
@@ -124,6 +129,9 @@ const Hero = () => {
               className="w-full h-full object-cover rounded-full shadow-2xl"
               loading="eager"
             />
+            <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 bg-[#1f0c0c]/70 text-[#E3B778] text-xs px-3 py-1 rounded-full border border-[#E3B778]/40">
+              Blend de invierno
+            </div>
           </figure>
 
           {/* Botella 2 */}
@@ -139,6 +147,9 @@ const Hero = () => {
               className="w-full h-full object-cover rounded-full shadow-2xl"
               loading="eager"
             />
+            <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 bg-[#1f0c0c]/70 text-[#E3B778] text-xs px-3 py-1 rounded-full border border-[#E3B778]/40">
+              Etiqueta regalo
+            </div>
           </figure>
 
           {/* Botella 3 */}
@@ -154,7 +165,29 @@ const Hero = () => {
               className="w-full h-full object-cover rounded-full shadow-2xl"
               loading="eager"
             />
+            <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 bg-[#1f0c0c]/70 text-[#E3B778] text-xs px-3 py-1 rounded-full border border-[#E3B778]/40">
+              Brillo dorado
+            </div>
           </figure>
+        </div>
+
+        <div className="mt-10 w-full" data-aos="fade-up" data-aos-delay="550">
+          <div className="frosted-card rounded-2xl p-5 flex flex-col md:flex-row items-center gap-4">
+            <div className="flex-1 text-center md:text-left">
+              <p className="uppercase tracking-[0.28em] text-xs text-[#E3B778]/80 mb-2">
+                Navidad 2025
+              </p>
+              <p className="text-white font-semibold text-lg">
+                Entregas en 24h en Lima y empaques personalizados con tu mensaje navideño.
+              </p>
+            </div>
+            <a
+              href="#contact"
+              className="bg-gradient-to-r from-[#e3b778] to-[#c7222a] text-[#3E1F1B] font-semibold px-6 py-3 rounded-full shadow-lg hover:from-[#f3d6a7] hover:to-[#d83335] transition"
+            >
+              Reservar entrega
+            </a>
+          </div>
         </div>
       </article>
     </section>

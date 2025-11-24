@@ -12,6 +12,18 @@ body {
     linear-gradient(135deg, #0b1a1a, #140909 45%, #1d0b0b);
   color: #f8fafc;
   min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 15% 15%, #e3b7780f 0, transparent 35%),
+    radial-gradient(circle at 85% 10%, #c7222a12 0, transparent 32%),
+    radial-gradient(circle at 20% 80%, #e3b7780c 0, transparent 32%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .snow-overlay {
@@ -44,4 +56,64 @@ body {
 
 .card-glow {
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(227, 183, 120, 0.14);
+}
+
+.frosted-card {
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(227, 183, 120, 0.18);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+}
+
+.garland {
+  background: linear-gradient(
+    90deg,
+    rgba(227, 183, 120, 0.85),
+    rgba(199, 34, 42, 0.85),
+    rgba(227, 183, 120, 0.85)
+  );
+  height: 6px;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
+}
+
+.ornament {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #fff, #e3b778 60%, #c7222a 100%);
+  box-shadow: 0 0 12px rgba(227, 183, 120, 0.4);
+  animation: sway 3.8s ease-in-out infinite;
+}
+
+@keyframes sway {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(6px) rotate(2deg);
+  }
+}
+
+.twinkle {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(1px 1px at 25% 25%, #ffffffcc, transparent),
+    radial-gradient(1px 1px at 70% 30%, #ffffffaa, transparent),
+    radial-gradient(1px 1px at 40% 70%, #e3b778aa, transparent);
+  background-size: 260px 260px;
+  animation: twinkle 8s ease-in-out infinite;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.5;
+  }
 }

@@ -63,7 +63,9 @@ const ContactUs = () => {
       id="contact"
       className="relative bg-gradient-to-r from-[#0f2d2a] via-[#3c0c0c] to-[#0f2d2a] py-16 text-white"
     >
+      <div className="garland absolute top-0 left-0 right-0" aria-hidden="true" />
       <div className="snow-overlay" aria-hidden="true" />
+      <div className="twinkle" aria-hidden="true" />
       <div className="container mx-auto px-4 md:px-8 lg:px-20 relative">
         <div className="text-center mb-10" data-aos="fade-up">
           <p className="uppercase tracking-[0.25em] text-xs text-[#E3B778]/80 mb-3">
@@ -76,6 +78,19 @@ const ContactUs = () => {
             Agenda catas navideñas, envíos con dedicatoria o personaliza tu pack
             para sorprender a quienes más quieres.
           </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-4 mb-8" data-aos="fade-up" data-aos-delay="150">
+          {["WhatsApp directo", "Tiempo de respuesta", "Envíos Lima y provincias"].map((item, idx) => (
+            <div key={idx} className="frosted-card rounded-xl p-4 text-center">
+              <p className="text-[#E3B778] font-semibold">{item}</p>
+              <p className="text-sm text-gray-200 mt-1">
+                {idx === 0 && "+51 924 786 633"}
+                {idx === 1 && "Respondemos en menos de 15 minutos"}
+                {idx === 2 && "Coordinamos delivery programado y seguro"}
+              </p>
+            </div>
+          ))}
         </div>
 
         <form
