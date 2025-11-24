@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaGift } from "react-icons/fa";
 import logo from "../assets/9.png";
 
 const Header = () => {
@@ -15,12 +16,13 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-gradient-to-r from-[#bb5a5a] to-[#5c1818] sticky z-[100] shadow-md">
+    <header className="relative bg-gradient-to-r from-[#0f2d2a] via-[#5c1818] to-[#0f2d2a] sticky z-[100] shadow-lg">
+      <div className="holiday-border" aria-hidden="true" />
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         {/* Logo */}
         <a
           href="/"
-          className="flex items-center focus:outline-none focus:ring-2 focus:ring-[#E3B778] rounded"
+          className="flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-[#E3B778] rounded"
         >
           <img
             src={logo}
@@ -82,7 +84,7 @@ const Header = () => {
         <nav className="hidden md:block" aria-label="Botón destacado">
           <a
             href="#catalogo"
-            className="bg-[#E3B778] hover:bg-[#d6a753] text-[#3E1F1B] font-semibold px-6 py-2 rounded-full transition-colors duration-200 shadow-md focus:outline-none focus:ring-2 focus:ring-[#E3B778] focus:ring-offset-2"
+            className="bg-gradient-to-r from-[#e3b778] to-[#c7222a] hover:from-[#f3d6a7] hover:to-[#d83335] text-[#3E1F1B] font-semibold px-6 py-2 rounded-full transition-colors duration-200 shadow-lg focus:outline-none focus:ring-2 focus:ring-[#E3B778] focus:ring-offset-2"
           >
             Ver Catálogo
           </a>
@@ -93,7 +95,7 @@ const Header = () => {
       {isMenuOpen && (
         <aside
           id="mobile-menu"
-          className="md:hidden absolute top-16 left-0 right-0 bg-[#3E1F1B] shadow-lg py-4 px-4"
+          className="md:hidden absolute top-16 left-0 right-0 bg-[#1c0b0b]/95 backdrop-blur shadow-lg py-4 px-4"
           aria-label="Menú móvil"
         >
           <nav>
@@ -112,7 +114,7 @@ const Header = () => {
               <li>
                 <a
                   href="#catalogo"
-                  className="block text-center bg-[#E3B778] text-[#3E1F1B] font-semibold px-6 py-2 rounded-full hover:bg-[#d6a753] transition"
+                  className="block text-center bg-gradient-to-r from-[#e3b778] to-[#c7222a] text-[#3E1F1B] font-semibold px-6 py-2 rounded-full hover:from-[#f3d6a7] hover:to-[#d83335] transition shadow-md"
                   onClick={toggleMenu}
                 >
                   Ver Catálogo
@@ -122,6 +124,13 @@ const Header = () => {
           </nav>
         </aside>
       )}
+
+      <div className="hidden md:flex items-center gap-3 bg-[#e3b778]/10 text-white px-4 py-2 border-t border-[#e3b778]/20">
+        <FaGift className="text-[#e3b778]" />
+        <p className="text-sm">
+          Vive la <strong className="text-[#e3b778]">Edición Navideña</strong> con envíos decorados y mensajes personalizados.
+        </p>
+      </div>
     </header>
   );
 };

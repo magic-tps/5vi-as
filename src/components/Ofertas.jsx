@@ -7,18 +7,19 @@ const ofertas = [
   {
     img: oferta1,
     titulo: "Pack Premium 3x2",
-    descripcion: "Lleva 3 botellas de vino y paga solo 2. Solo esta semana.",
+    descripcion:
+      "Lleva 3 botellas edición navideña y paga solo 2. Incluye tarjeta dedicatoria.",
   },
   {
     img: oferta2,
-    titulo: "Vino del Mes",
-    descripcion: "Descuento del 25% en nuestro vino estrella de junio.",
+    titulo: "Vino de la Nochebuena",
+    descripcion: "Descuento del 25% en nuestro blend estrella para la cena de Navidad.",
   },
   {
     img: oferta3,
     titulo: "Regalo por tu primera compra",
     descripcion:
-      "Recibe un sostenedor de botella grabado por compras mayores a S/150.",
+      "Recibe un sostenedor grabado y cintas rojas por compras mayores a S/150.",
   },
 ];
 
@@ -26,17 +27,19 @@ const Ofertas = () => {
   return (
     <section
       id="ofertas"
-      className="bg-[#3E1F1B] py-12 px-4 md:px-8 lg:px-40 text-[#E3B778]"
+      className="relative bg-gradient-to-r from-[#0b1a1a] via-[#200b0b] to-[#0b1a1a] py-12 px-4 md:px-8 lg:px-40 text-[#E3B778]"
     >
-      <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8">
-          Ofertas Especiales
-        </h2>
+      <div className="snow-overlay" aria-hidden="true" />
+      <div className="max-w-7xl mx-auto text-center relative">
+        <p className="uppercase tracking-[0.2em] text-xs text-[#E3B778]/80 mb-2">
+          Promos con espíritu navideño
+        </p>
+        <h2 className="text-3xl md:text-4xl font-bold mb-8">Ofertas Especiales</h2>
         <div className="grid gap-8 md:grid-cols-3">
           {ofertas.map((oferta, idx) => (
             <div
               key={idx}
-              className="bg-[#470808] rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition"
+              className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden card-glow hover:-translate-y-2 transition"
               data-aos="fade-up"
               data-aos-delay={idx * 100}
             >

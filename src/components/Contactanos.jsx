@@ -61,20 +61,27 @@ const ContactUs = () => {
   return (
     <section
       id="contact"
-      className="bg-gradient-to-r from-[#5c1818] to-[#bb5a5a] py-16 text-white"
+      className="relative bg-gradient-to-r from-[#0f2d2a] via-[#3c0c0c] to-[#0f2d2a] py-16 text-white"
     >
-      <div className="container mx-auto px-4 md:px-8 lg:px-20">
-        <h2
-          className="text-3xl md:text-4xl font-bold text-center text-[#E3B778] mb-10"
-          data-aos="fade-up"
-        >
-          Contáctanos
-        </h2>
+      <div className="snow-overlay" aria-hidden="true" />
+      <div className="container mx-auto px-4 md:px-8 lg:px-20 relative">
+        <div className="text-center mb-10" data-aos="fade-up">
+          <p className="uppercase tracking-[0.25em] text-xs text-[#E3B778]/80 mb-3">
+            Brinda con nosotros
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-[#E3B778]">
+            Contáctanos
+          </h2>
+          <p className="text-gray-200 mt-3 max-w-2xl mx-auto">
+            Agenda catas navideñas, envíos con dedicatoria o personaliza tu pack
+            para sorprender a quienes más quieres.
+          </p>
+        </div>
 
         <form
           ref={formRef}
           onSubmit={sendEmail}
-          className="max-w-2xl mx-auto bg-[#470808] p-8 rounded-2xl shadow-xl space-y-6"
+          className="max-w-2xl mx-auto bg-white/5 border border-white/10 p-8 rounded-2xl card-glow space-y-6 backdrop-blur"
           data-aos="fade-up"
         >
           {error && (
@@ -90,7 +97,7 @@ const ContactUs = () => {
             </label>
             <input
               type="text"
-              name="nombre"
+              name="user_name"
               placeholder="Ej. Karina Rossel"
               className="w-full px-4 py-3 rounded-lg bg-[#2c0d0d] text-white border border-[#E3B778] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E3B778]"
             />
@@ -103,7 +110,7 @@ const ContactUs = () => {
             </label>
             <input
               type="email"
-              name="correo"
+              name="user_email"
               placeholder="Ej. karina@gmail.com"
               className="w-full px-4 py-3 rounded-lg bg-[#2c0d0d] text-white border border-[#E3B778] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E3B778]"
             />
@@ -115,7 +122,7 @@ const ContactUs = () => {
               Mensaje
             </label>
             <textarea
-              name="mensaje"
+              name="message"
               rows="5"
               placeholder="¿En qué podemos ayudarte?"
               className="w-full px-4 py-3 rounded-lg bg-[#2c0d0d] text-white border border-[#E3B778] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E3B778]"

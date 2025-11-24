@@ -12,21 +12,21 @@ const productos = [
     tipo: "Vino Tinto – Malbec",
     imagen: vino1,
     descripcion:
-      "Notas de frutos rojos, taninos suaves, ideal para carnes rojas.",
+      "Notas de frutos rojos y especias dulces, ideal para la cena navideña.",
   },
   {
     nombre: "Viña del Sol",
     tipo: "Vino Blanco – Sauvignon Blanc",
     imagen: vino2,
     descripcion:
-      "Aromas cítricos y frescura ideal para mariscos y quesos suaves.",
+      "Aromas cítricos con final floral, perfecto para entradas frescas y brindis.",
   },
   {
     nombre: "5 Viñas Rosé",
     tipo: "Vino Rosado – Blend Especial",
     imagen: vino3,
     descripcion:
-      "Equilibrio entre dulzor y acidez, perfecto para celebraciones.",
+      "Equilibrio entre dulzor y acidez, listo para acompañar postres festivos.",
   },
 ];
 
@@ -53,24 +53,34 @@ const CatalogoCarousel = () => {
   return (
     <section
       id="catalogo"
-      className="bg-gradient-to-r from-[#bb5a5a] to-[#5c1818] py-16"
+      className="relative bg-gradient-to-r from-[#132826] via-[#471010] to-[#132826] py-20"
     >
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-[#E3B778] mb-12">
-          Nuestro Catálogo
-        </h2>
+      <div className="snow-overlay" aria-hidden="true" />
+      <div className="container mx-auto px-4 relative">
+        <div className="text-center mb-12" data-aos="fade-up">
+          <p className="uppercase tracking-[0.25em] text-xs text-[#E3B778]/80 mb-3">
+            Edición navidad 2025
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-[#E3B778]">
+            Nuestro Catálogo
+          </h2>
+          <p className="text-gray-200 mt-3 max-w-2xl mx-auto">
+            Brinda con sabores inspirados en la temporada: barricas tostadas, frutas
+            maduras y presentaciones listas para regalar.
+          </p>
+        </div>
 
         <Slider {...settings}>
           {productos.map((vino, index) => (
             <div key={index} className="px-4">
-              <div className="bg-[#470808] rounded-lg overflow-hidden shadow-lg">
+              <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden card-glow">
                 <img
                   src={vino.imagen}
                   alt={`Botella de ${vino.nombre}`}
                   className="w-full h-80 object-cover"
                   loading="lazy"
                 />
-                <div className="p-6 text-white">
+                <div className="p-6 text-white space-y-2">
                   <h3 className="text-xl font-semibold text-[#E3B778] mb-1">
                     {vino.nombre}
                   </h3>
@@ -82,7 +92,7 @@ const CatalogoCarousel = () => {
                   </p>
                   <a
                     href="#contact"
-                    className="inline-block bg-[#E3B778] text-[#3E1F1B] font-semibold px-6 py-2 rounded-full text-sm hover:bg-[#d6a753] transition"
+                    className="inline-block bg-gradient-to-r from-[#e3b778] to-[#c7222a] text-[#3E1F1B] font-semibold px-6 py-2 rounded-full text-sm hover:from-[#f3d6a7] hover:to-[#d83335] transition shadow-md"
                   >
                     Solicitar más info
                   </a>
